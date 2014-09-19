@@ -1,12 +1,14 @@
 package no.hinesna;
 
+import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        ArrayList<Person> personer = new ArrayList<Person>();
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        List<Person> personer = new ArrayList<Person>();
         Scanner scanner = new Scanner(System.in);
         boolean b = true;
 
@@ -16,7 +18,6 @@ public class Main {
         System.out.println("S = show");
         System.out.println("D = delete all");
         System.out.println("X = delete item");
-
 
         while(b == true){
             System.out.print("Ta et valg: ");
@@ -50,12 +51,10 @@ public class Main {
             }
             else if(valg == 'X'){
                 System.out.print("Velg index du vil slette: ");
-                int index = scanner.nextInt();
-                System.out.println(index);
+                int index = Integer.parseInt(scanner.nextLine());
                 personer.remove(personer.get(index));
                 System.out.println("Person ble slettet.");
             }
         }
-
     }
 }
