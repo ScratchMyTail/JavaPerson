@@ -1,9 +1,11 @@
 package no.hinesna;
 
+import java.io.Serializable;
+
 /**
  * Created by christerhansen on 12.09.14.
  */
-public class Person {
+public class Person implements Serializable {
     private String forNavn;
     private String etterNavn;
 
